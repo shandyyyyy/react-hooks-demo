@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import styleImport from 'vite-plugin-style-import';
+import legacy from '@vitejs/plugin-legacy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,6 +19,9 @@ export default defineConfig({
           }
         ]
       }
-    )
+    ),
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
   ]
 })
